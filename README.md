@@ -17,9 +17,10 @@ git clone https://github.com/sdenel/highlight
 
 * Insert the following lines in your ~/.bashrc file:
 ```bash
-export PATH="~/bin/highlight:$PATH"
+# Installing highlight tool from https://github.com/sdenel/highlight
+export PATH=~/bin/highlight/:$PATH
 # Optionally, also add these alias to ease auto-complete:
-alias highlight-red="highlight red"
-alias highlight-green="highlight green"
-alias hightlight-blue="highlight blue"
+alias highlight-red='highlight red'
+alias highlight-green='highlight green'
+alias highlight-blue='highlight blue'
 ```
