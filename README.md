@@ -15,7 +15,7 @@ cd ~/bin
 git clone https://github.com/sdenel/highlight
 ```
 
-* Insert the following lines in your ~/.bashrc file:
+Then insert the following lines in your ~/.bashrc file:
 ```bash
 # Installing highlight tool from https://github.com/sdenel/highlight
 export PATH=~/bin/highlight/:$PATH
