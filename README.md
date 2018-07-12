@@ -2,7 +2,7 @@
 
 A simple python script to highlight text like grep would do, but without filtering lines. The script is compatible with Python 2 and Python 3.
 
-## Exemple
+## Example
 
 ![AN example of using highlight](screenshot.png)
 
