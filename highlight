@@ -5,10 +5,7 @@ import re
 
 to_highlight = sys.argv[-1]
 
-bash_color = "\033[1;31m" # red
-
-regex = re.compile(re.escape(to_highlight), re.IGNORECASE)
-
 for line in sys.stdin.readlines():
-    line_colored = regex.sub(bash_color + to_highlight + "\033[0m", line)
+    line_colored = re.sub(r"(?i)(" + re.escape(to_highlight) +")", r"\033[1;31m\1\033[0m", line )
     sys.stdout.write(line_colored)
+
