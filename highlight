@@ -1,23 +1,14 @@
 #!/usr/bin/env python
 # From: See https://github.com/sdenel/highlight
 import sys
-
-bash_colors_d = {
-    "red" : "\033[1;31m",
-    "green": "\033[1;32m",
-    "blue": "\033[1;34m",
-}
+import re
 
 to_highlight = sys.argv[-1]
 
-if len(sys.argv) > 2: # The user provided a color
-    color = sys.argv[-2]
-else:
-    color = "red"
+bash_color = "\033[1;31m" # red
 
-assert color in bash_colors_d, color + " not in " + str(bash_colors_d.keys())
-bash_color = bash_colors_d[color]
+regex = re.compile(re.escape(to_highlight), re.IGNORECASE)
 
 for line in sys.stdin.readlines():
-    line_colored = line.replace(to_highlight, bash_color + to_highlight + "\033[0m")
+    line_colored = regex.sub(bash_color + to_highlight + "\033[0m", line)
     sys.stdout.write(line_colored)
